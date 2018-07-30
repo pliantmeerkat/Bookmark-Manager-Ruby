@@ -1,6 +1,8 @@
 feature 'Visible List of Bookmarks' do
+  before(:each) { visit('/') }
   scenario 'Home page displays list of bookmarks' do
-    visit('/')
     expect(page).to have_content('Bookmarks')
+    expect(page).to have_content 'http://google.com'
+    expect(page).to have_content 'https://github.com'
   end
 end
