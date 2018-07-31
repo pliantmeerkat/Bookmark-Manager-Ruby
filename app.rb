@@ -1,6 +1,5 @@
 require 'sinatra'
 require './model/bookmark'
-
 class App < Sinatra::Base
   get '/' do
     # erb(:index)

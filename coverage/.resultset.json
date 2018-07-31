@@ -4,7 +4,6 @@
       "/Users/jackbranch/Desktop/Makers Course Files/Week 4/BookmarkManager/app.rb": [
         1,
         1,
-        null,
         1,
         1,
         null,
@@ -22,9 +21,11 @@
       "/Users/jackbranch/Desktop/Makers Course Files/Week 4/BookmarkManager/model/bookmark.rb": [
         null,
         1,
-        null,
+        1,
         1,
         2,
+        2,
+        8,
         null,
         null,
         null
@@ -53,6 +54,6 @@
         null
       ]
     },
-    "timestamp": 1532965311
+    "timestamp": 1533050015
   }
 }

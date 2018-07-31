@@ -8,6 +8,7 @@ gem 'rake'
 gem 'haml'
 gem 'nokogiri'
 gem 'sinatra'
+gem 'pg'
 group :test do
   gem 'capybara'
   gem 'rspec'
