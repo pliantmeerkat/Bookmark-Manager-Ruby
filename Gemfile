@@ -9,6 +9,7 @@ gem 'haml'
 gem 'nokogiri'
 gem 'sinatra'
 gem 'pg'
+gem 'sinatra-flash'
 group :test do
   gem 'capybara'
   gem 'rspec'

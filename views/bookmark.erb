@@ -1,6 +1,88 @@
-<h1>Bookmarks</h1>
+<style>
+  
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+} 
+.menubar {
+  border-style: outset;
+  position: relative;
+  width: 100%;
+}
+.menub {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  padding: 20px;
+  background-color: cyan;
+  width: 24.2%;
+  position: relative;
+}
+ .top {
+  background-color: teal;
+  margin-left: 34%;
+  margin-right: 35%;
+  display: flex;
+  position: relative;
+}
+.booklist {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
+  border-radius: 30%;
+  background: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) 
+}
+.books {
+  background: radial-gradient(#e66465, #9198e5);
+  position: relative;
+  margin-right: 6%;
+  margin-left: 3%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+body {
+  position: relative;
+   height: 100%;
+   background: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) fixed;
+}
+  
+</style>
+<body>
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+<div class="top"><br>
+  <form class="menubar" action="route">
+  <input type="submit"class="menub"value="Add"id="add"> <input type="submit"class="menub"value="Remove"id="rm"> <input type="submit"class="menub"value="Settings"id="settings"> <input type="submit"class="menub"value="Help"id="help"> 
+  </form>
+  </div>
+<div class="booklist">
+<h1 align="center">Bookmarks</h1>
 <ul>
+ <div class="books">
+ <h2>
 <% @bookmarks.each do |b| %>
-  <li><%= b %></li>
+  <li><a href="<%= b %>"><%= b %></a></li>
   <% end %>
 </ul>
+  </h2
+ </div>
+  <br><br<br><br><br>
+</div>
