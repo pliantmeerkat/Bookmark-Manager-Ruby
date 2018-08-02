@@ -1,14 +1,13 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require './model/bookmark'
+# main App 
 class App < Sinatra::Base
-
   enable :sessions
   register Sinatra::Flash
 
   get '/' do
     # erb(:index)
-    
     redirect('/bookmark')
   end
 
@@ -26,7 +25,7 @@ class App < Sinatra::Base
   end
 
   post '/add_bookmark' do
-    url = params
+    url = params['Bookmark']
     Bookmark.add_bookmark(url)
     redirect('/bookmark')
   end
