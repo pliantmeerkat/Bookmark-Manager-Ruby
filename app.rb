@@ -13,11 +13,8 @@ class App < Sinatra::Base
 
   get '/bookmark' do
     @bookmarks = Bookmark.all
+    flash[:waring]
     erb(:bookmark)
-  end
-
-  get '/route' do
-    redirect('/new')
   end
 
   get '/new' do
@@ -26,7 +23,11 @@ class App < Sinatra::Base
 
   post '/add_bookmark' do
     url = params['Bookmark']
-    Bookmark.add_bookmark(url)
+    if Bookmark.add_bookmark(url) == 'INVALID'
+      flash[:warning] = 'Invalid Url'
+      redirect('/bookmark')
+    end
+    flash[:warning] = 'Bookmark Added'
     redirect('/bookmark')
   end
 

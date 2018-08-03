@@ -20,9 +20,9 @@ Capybara.app = App
 
 RSpec.configure do |config|
   config.after(:suite) do
-    puts '------------------------------'
-    puts "\e[33mProcessing Robotests!\e[0m"
-    puts "\e[33mDo not anger the Robocop\e[0m"
-    puts "\e[33mJack is cool\e[0m"
+    puts "\n\e[35m------------------------------\e[0m"
+    puts "\e[34mProcessing Robotests!\e[0m"
+    puts "\e[31mDo not anger the Robocop\e[0m"
+    puts "\e[36mJack is cool\e[10m"
   end
 end

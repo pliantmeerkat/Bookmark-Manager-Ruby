@@ -8,6 +8,11 @@ class Bookmark
   end
 
   def self.add_bookmark(link)
+    begin
+      raise 'invalid url' if /http/.match(link).nil? || link.length < 10
+    rescue 
+      return 'INVALID'
+    end
     @connection = connection_set
     @connection.exec("INSERT INTO bookmarks (url) VALUES('#{link}');")
   end
