@@ -1,10 +1,7 @@
 feature 'Visible List of Bookmarks' do
   scenario 'Home page displays list of bookmarks' do
-    connection = PG.connect(dbname: 'bookmark_manager_test')
-    3.times do |i|
-      connection.exec("INSERT INTO bookmarks (url) VALUES('#{test_bookmarks[i]}');")
-    end
+    add_test_bookmarks_to_db
     visit('/')
-    test_bookmarks.each { |b| expect(page).to have_content(b) }
+    test_bookmarks.each { |b| expect(page).to have_content(b[:title]) }
   end
 end

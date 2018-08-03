@@ -70,7 +70,7 @@ body {
 <% end %>
 <div class="top"><br>
   <form class="menubar">
-  <input type="submit"class="menub"value="Add"id="add"formaction="/new"> <input type="submit"class="menub"value="Remove"id="rm"> <input type="submit"class="menub"value="Settings"id="settings"> <input type="submit"class="menub"value="Help"id="help"> 
+  <input type="submit"class="menub"value="Add"id="add"formaction="/new"> <input type="submit"class="menub"value="Remove"id="rm"formaction="/delete"> <input type="submit"class="menub"value="Settings"id="settings"> <input type="submit"class="menub"value="Clear"id="clear"formaction="/clear"> 
   </form>
   </div>
 <div class="booklist">
@@ -79,10 +79,10 @@ body {
  <div class="books">
  <h2>
 <% @bookmarks.each do |b| %>
-  <li><a href="<%= b %>"><%= b %></a></li>
+  <li><a href="<%= b[0] %>"><%= b[1] %></a></li>
   <% end %>
 </ul>
-  </h2
+  </h2>
  </div>
   <br><br<br><br><br>
 </div>

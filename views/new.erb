@@ -39,12 +39,19 @@ background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%
 }
 </style>
 <body>
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
 <div class="labeling">
   <h1 align="center">Enter A Bookmark</h1>
 </div>
 <div class="NewEntry" align="center">
 <form class="urlinput"action="add_bookmark"method="post">
 <input class="urltin"type="text"name="Bookmark">
+<input class="urltin"type="text"name="title">
  <br><br><br>
 <input class="urlin"type="submit" value="Enter">
 </form>

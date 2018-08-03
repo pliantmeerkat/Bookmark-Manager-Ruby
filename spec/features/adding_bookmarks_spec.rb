@@ -3,13 +3,13 @@ feature 'Adding Bookmarks' do
     visit '/'
   end
   scenario 'User can add a bookmark' do
-    new_bookmark = 'https://en.wikipedia.org/wiki/Capybara'
-    expect(page).to_not have_content(new_bookmark)
+    expect(page).to_not have_content('Capybara')
     click_button('Add')
-    fill_in('Bookmark', with: new_bookmark)
+    fill_in('Bookmark', with: 'https://en.wikipedia.org/wiki/Capybara')
+    fill_in('title', with: 'Capybara')
     click_button('Enter')
     expect(page).to have_content('Bookmark Added')
-    expect(page).to have_content(new_bookmark)
+    expect(page).to have_content('Capybara')
   end
   scenario 'Cannot add bookmark if url invalid' do
     click_button('Add')
