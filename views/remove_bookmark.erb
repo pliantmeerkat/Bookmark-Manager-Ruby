@@ -1,0 +1,58 @@
+<head>
+  <title>Bookmark Manager</title>
+</head>
+<style>
+ body {
+ background: rgb(131,58,180);
+background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
+}
+
+.NewEntry {
+  position: relative;
+  margin-top: 10%;
+}
+.urlin {
+  position: relative;
+  padding: 4%;
+  font-size: 200%;
+  color: grey;
+  border-radius: 50%;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%,   rgba(148,187,233,1) 100%);
+}
+.urltin {
+  font-size: 120%;
+  position: relative;
+  padding: 2%;
+  width: 40%;
+  border-radius: 6%;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%,   rgba(148,187,233,1) 100%);
+}
+.labeling {
+  color: blue;
+  position: relative;
+  margin-top: 10%;
+  margin-right: 30%;
+  margin-left: 30%;
+  font-size: 200%;
+}
+</style>
+<body>
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+<div class="labeling">
+  <h1 align="center">Enter a bookmark title to delete</h1>
+</div>
+<div class="NewEntry" align="center">
+<form class="urlinput"action="/delete-bookmark"method="post">
+<input class="urltin"type="text"name="Bookmark">
+ <br><br><br>
+<input class="urlin"type="submit" value="Confirm">
+</form>
+</div>
+</body>
